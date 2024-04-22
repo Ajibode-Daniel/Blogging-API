@@ -1,0 +1,14 @@
+{
+  "name": "second-semester-exam",
+  "version": "1.0.0",
+  "description": "Second Semester Alt School Backend Engineering Exam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ajibode Daniel",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
