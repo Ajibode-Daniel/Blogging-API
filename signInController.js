@@ -1,8 +1,23 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
+const { check, validationResult } = require('express-validator');
 
-const signIn = async (req, res) => {
+
+const signIn = [ 
+ // Validation rules
+     check('email').isEmail().withMessage('Invalid email address'),
+     check('password').notEmpty().withMessage('Password is required'),
+    
+
+
+async (req, res) => {
+        // Validate the request
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+async (req, res) => {
     try {
         const { email, password } = req.body;
 
@@ -25,6 +40,6 @@ const signIn = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Internal server error' });
     }
-};
-
+};}
+]
 module.exports = signIn;

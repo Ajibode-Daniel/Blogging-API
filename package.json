@@ -10,5 +10,10 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "redis": "^4.7.0",
+    "validator": "^13.12.0"
   }
 }
